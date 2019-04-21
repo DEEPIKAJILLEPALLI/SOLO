@@ -1,0 +1,16 @@
+.parentDiv{
+width: 400px;
+height: 400px;
+margin:100px auto;
+background-color: orangered;
+/* position: relative; */
+}
+
+.childDiv{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: static;
+    top:20px;
+    left:20px;
+    }
