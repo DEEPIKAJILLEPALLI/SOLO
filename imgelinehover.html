@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<style>
+.hoverimg {
+position:absolute;
+  width: 300px;
+  height: 500px;
+  background-color: transparent;
+  border: 1px solid transparent;
+top:100px;
+left:100px;}
+.imgcl{
+position:relative;
+}
+.imgcl:hover img{
+    transform: scale(1.2);
+
+}
+.hoverimg:hover{
+  border: 1px solid black;
+  
+  transform:  matrix(1, -0.3, 0, 1, 0, 0) ; /* Standard syntax */
+
+  }
+</style>
+<body>
+
+<h2>HTML Image</h2>
+<div class="imgcl">
+<img src="imgs/portfolio/008.jpg" alt="Girl in a jacket" width="500" height="600">
+</div>
+<div class="hoverimg"></div>
+</body>
+</html>

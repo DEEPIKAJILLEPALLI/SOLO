@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://www.w3schools.com/html/tryit.asp?filename=tryhtml_images_girl -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+.hoverimg {
+position:absolute;
+  width: 300px;
+  height: 500px;
+  background-color: transparent;
+  border: 1px solid transparent;
+top:100px;
+left:100px;}
+.imgcl{
+position:relative;
+}
+.imgcl:hover img{
+    transform: scale(1.2);
+
+}
+.hoverimg:hover{
+  border: 1px solid black;
+  
+  transform:  matrix(1, -0.3, 0, 1, 0, 0) ; /* Standard syntax */
+
+  }
+</style>
+</head><body contenteditable="false">
+
+<h2>HTML Image</h2>
+<div class="imgcl">
+<img src="./img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+</div>
+<div class="hoverimg"></div>
+
+
+</body></html>
