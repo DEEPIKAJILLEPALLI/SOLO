@@ -95,11 +95,11 @@ $(window).on('load', function () {
 $(function () {
     $('#portfolio-wrapper').magnificPopup({
         delegate: 'a', // child items selector, by clicking on it popup will open
-         type: 'image',
+        type: 'image',
         gallery: {
             // options for gallery
             enabled: true
-          }
+        }
         // other options
     });
 });
@@ -107,16 +107,85 @@ $(function () {
 /* ===============================================
                       Testimonials
     ============================================== */
-    $(function () {
-        // $(".owl-carousel").owlCarousel();
-        $('#testimonials-slider').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            autoplay: true,
-            items:1,
-            autoplayHoverPause :true,
-            navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']
-        });
+$(function () {
+    // $(".owl-carousel").owlCarousel();
+    $('#testimonials-slider').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        items: 1,
+        autoplayHoverPause: true,
+        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
     });
-    
+});
+
+/* =========================================
+        Counter UP
+   ========================================*/
+$(function () {
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+});
+/* ===============================================
+                      Clients
+    ============================================== */
+$(function () {
+    $('#client-list').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        items: 1,
+        autoplayHoverPause: true,
+        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+    });
+});
+
+/* ==========================================
+        Google Map
+  ============================================ */
+$(window).on('load', function () {
+    //Map Variables
+    var address = "Hitech City ,Hyderabad";
+    var Lat_Lng = {
+        lat: 17.439660,
+        lng: 78.396080
+    };
+    // 1.Map Rendering
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: Lat_Lng
+    });
+    // 2. Add Marker
+    var marker = new google.maps.Marker({
+        position: Lat_Lng,
+        map: map,
+        title: "Click To See Address"
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+        content: address
+    });
+    marker.addListener('click', function () {
+        infowindow.open(map, marker);
+    });
+});
+
+/* ==========================================
+        Navigation
+   ==========================================*/
+$(function () {
+    $(window).scroll(function () {
+        // alert("You just scrolled up!");
+        if ($(window).scrollTop() > 50) {
+            $("nav").addClass("white-nav-top");
+            $(".navbar-brand img").attr("src","imgs/logo/logo-dark.png");
+        } else {
+            $("nav").removeClass("white-nav-top");
+            $(".navbar-brand img").attr("src","imgs/logo/logo.png");
+        }
+    });
+});
